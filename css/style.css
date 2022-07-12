@@ -1,0 +1,124 @@
+html,
+body {
+  background: #fff;
+  font-size: .75rem;
+  margin: 0;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+main {
+  padding: 3rem 0 0;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(610px, 1fr));
+  justify-content: center;
+  margin-bottom: 3rem;
+  padding: 0 5%;
+}
+
+.phone,
+.display {
+  background: url(../img/display.png) 50% 50% no-repeat;
+  background-size: contain;
+  height: 500px;
+  min-width: 420px;
+  position: relative;
+}
+
+.display {
+  min-width: 610px;
+}
+
+.phone {
+  background-image: url(../img/phone.png);
+}
+
+.example {
+  background: #000428;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #004e92, #000428);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #004e92, #000428); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  position: absolute;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 324px;
+  width: 517px;
+}
+
+.phone .example {
+  border-radius: 15px;
+  overflow: hidden;
+  top: 44px;
+  margin: 0 0 0 1px;
+  height: 415px;
+  width: 199px;
+}
+
+section article {
+  font: 1rem "Arial, Verdana", sans-serif;
+}
+
+section article h1 {
+  font-size: 2rem;
+  margin: 0 0 2rem;
+  text-align: center;
+}
+
+section article p {
+  margin: 0 0 1rem;
+}
+
+section .tabset {
+  margin: 0 0 1rem;
+}
+
+section .tabset ul {
+  display: flex;
+  list-style: none;
+  margin: 0 0 -1px;
+  padding: 0;
+}
+
+section .tabset ul a {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  margin: 0 -1px 0 0;
+  padding: 10px;
+}
+
+section .tabset ul a:hover {
+  text-decoration: underline;
+}
+
+section .tabset ul a.active {
+  background: #2b2b2b;
+  color: #fff;
+  text-decoration: none;
+}
+
+section .tabset .tab {
+  color: #fff;
+  display: none;
+  padding: 10px;
+  overflow: auto;
+}
+
+section .tabset .tab.active {
+  background: #2b2b2b;
+  display: block;
+}
+
+pre {
+  margin: 0;
+  text-align: left;
+  height: 375px;
+}
+
+pre .ln { color: #606366; font-weight: normal; font-style: normal; }
