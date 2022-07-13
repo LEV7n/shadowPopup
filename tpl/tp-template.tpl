@@ -1,5 +1,6 @@
 <code>
 <style type="text/css">
+  @import "css/template.css";
   .s0 { color: #e8bf6a;}
   .s1 { color: #bababa;}
   .s2 { color: #a5c261;}
@@ -33,6 +34,5 @@
 <a name="l20"><span class="ln">20   </span></a>    <span class="s0">&lt;/div&gt;</span>
 <a name="l21"><span class="ln">21   </span></a>  <span class="s0">&lt;/div&gt;</span>
 <a name="l22"><span class="ln">22   </span></a>
-<a name="l23"><span class="ln">23   </span></a><span class="s0">&lt;/div&gt;</span>
-<a name="l24"><span class="ln">24   </span></a></pre>
+<a name="l23"><span class="ln">23   </span></a><span class="s0">&lt;/div&gt;</span></pre>
 </code>
