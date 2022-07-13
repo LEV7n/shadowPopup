@@ -122,8 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         el.textContent = strings[el.id] || el.textContent;
       });
     },
-    appear: (instance) => {
-      return true;
-    }
+    appear: () => true
   });
 });
