@@ -74,18 +74,18 @@ section article p {
   margin: 0 0 1rem;
 }
 
-section .tabset {
+section .tab-set {
   margin: 0 0 1rem;
 }
 
-section .tabset ul {
+section .tab-set ul {
   display: flex;
   list-style: none;
   margin: 0 0 -1px;
   padding: 0;
 }
 
-section .tabset ul a {
+section .tab-set ul a {
   color: #000;
   display: block;
   text-decoration: none;
@@ -93,32 +93,24 @@ section .tabset ul a {
   padding: 10px;
 }
 
-section .tabset ul a:hover {
+section .tab-set ul a:hover {
   text-decoration: underline;
 }
 
-section .tabset ul a.active {
+section .tab-set ul .active a {
   background: #2b2b2b;
   color: #fff;
   text-decoration: none;
 }
 
-section .tabset .tab {
+section .tab-set .tab-content {
+  background: #2b2b2b;
   color: #fff;
-  display: none;
   padding: 10px;
   overflow: auto;
-}
-
-section .tabset .tab.active {
-  background: #2b2b2b;
-  display: block;
-}
-
-pre {
-  margin: 0;
-  text-align: left;
   height: 375px;
 }
 
-pre .ln { color: #606366; font-weight: normal; font-style: normal; }
+section .tab-set .tab-content
+
+section .tab-set .loading

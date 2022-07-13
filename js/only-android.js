@@ -1,5 +1,9 @@
 options = {
-  holder: document.querySelector('#only-android'),
+  shadowParent: document.querySelector('#only-android'),
+  stylesheets: [
+    './css/popup.css',
+    '.popup { position: fixed; right: 0; bottom: 0; left: 0; z-index: 1001; }'
+  ],
   title: '<h1>Google is a search</h1>',
   content: '<p>Use it anywhere</p>',
   buttons: {
@@ -10,7 +14,7 @@ options = {
       },
       actions: {
         click: ({ button, event, instance }) => {
-          instance.setCookie('only-mobile', 1, 14);
+          localStorage.setItem('android-app', instance.options.addDays(14));
           instance.hide();
         }
       }
@@ -30,17 +34,15 @@ options = {
       }
     }
   },
+  addDays: (days) => {
+    let date = new Date();
+    date.setDate(date.getDate() + days);
+    return date.getTime();
+  },
   appear: (instance) => {
-    const ua = new MobileDetect(window.navigator.userAgent), isAndroid = ua.is('Android'),
+    const state = new Date() > localStorage.getItem('android-app'),
+          ua = new MobileDetect(window.navigator.userAgent), isAndroid = ua.is('Android'),
           link = document.querySelector('#show-only-android');
-    
-    /*Set position inline*/
-    instance.css(instance.popup, {
-      position: 'absolute',
-      right: 0,
-      bottom: 0,
-      left: 0
-    });
     
     link.style.display = (!isAndroid ? '' : 'none');
     link.addEventListener('click', (e) => {
@@ -48,6 +50,6 @@ options = {
       instance.show();
     });
     
-    return isAndroid && !instance.getCookie('only-mobile');
+    return isAndroid && state;
   }
 }

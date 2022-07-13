@@ -21,88 +21,14 @@
       </div>
       <article>
         <p>Visible only in android <a id="show-only-android" href="#">show</a></p>
-        <div class="tabset">
+        <div class="tab-set">
           <ul>
-            <li><a href="#oa-main">main.js</a></li>
-            <li><a href="#oa-opts">only-android.js</a></li>
+            <li><a href="tpl/oa-main.js.tpl" rel="oa-main">main.js</a></li>
+            <li><a href="tpl/oa-options.js.tpl" rel="oa-opts">only-android.js</a></li>
           </ul>
           <div class="tabs">
-            <div id="oa-main" class="tab">
-<style type="text/css">
- #oa-main .s0 { color: #e8bf6a; }
- #oa-main .s1 { color: #a9b7c6; }
- #oa-main .s2 { color: #bababa; }
- #oa-main .s3 { color: #a5c261; }
- #oa-main .s4 { color: #6897bb; }
- #oa-main .s5 { color: #cc7832; }
- #oa-main .s7 { color: #6a8759; }
-</style>
-<pre><a name="l1"><span class="ln">1   </span></a>  <span class="s0">&lt;script </span><span class="s2">type</span><span class="s3">=&quot;text/javascript&quot;</span><span class="s0">&gt;</span>
-<a name="l2"><span class="ln">2   </span></a>    <span class="s1">android = </span><span class="s5">new </span><span class="s1">ShadowPopup({ url: </span><span class="s7">'./js/only-mobile.js' </span><span class="s1">})</span><span class="s5">;</span>
-<a name="l3"><span class="ln">3   </span></a>  <span class="s0">&lt;/script&gt;</span></pre>
-            </div>
-            <div id="oa-opts" class="tab">
-<style type="text/css">
- #oa-opts .s0 { color: #a9b7c6;}
- #oa-opts .s1 { color: #6a8759;}
- #oa-opts .s2 { color: #cc7832;}
- #oa-opts .s3 { color: #6897bb;}
- #oa-opts .s4 { color: #808080;}
-</style>
-<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">options = {</span>
-<a name="l2"><span class="ln">2    </span></a>  <span class="s0">holder: document.querySelector(</span><span class="s1">'#only-android'</span><span class="s0">)</span><span class="s2">,</span>
-<a name="l3"><span class="ln">3    </span></a>  <span class="s0">title: </span><span class="s1">'&lt;h1&gt;Google is a search&lt;/h1&gt;'</span><span class="s2">,</span>
-<a name="l4"><span class="ln">4    </span></a>  <span class="s0">content: </span><span class="s1">'&lt;p&gt;Use it anywhere&lt;/p&gt;'</span><span class="s2">,</span>
-<a name="l5"><span class="ln">5    </span></a>  <span class="s0">buttons: {</span>
-<a name="l6"><span class="ln">6    </span></a>    <span class="s0">disagree: {</span>
-<a name="l7"><span class="ln">7    </span></a>      <span class="s0">text: </span><span class="s1">'Not now'</span><span class="s2">,</span>
-<a name="l8"><span class="ln">8    </span></a>      <span class="s0">attributes: {</span>
-<a name="l9"><span class="ln">9    </span></a>        <span class="s2">class</span><span class="s0">: </span><span class="s1">'btn-secondary'</span>
-<a name="l10"><span class="ln">10   </span></a>      <span class="s0">}</span><span class="s2">,</span>
-<a name="l11"><span class="ln">11   </span></a>      <span class="s0">actions: {</span>
-<a name="l12"><span class="ln">12   </span></a>        <span class="s0">click: ({ button</span><span class="s2">, </span><span class="s0">event</span><span class="s2">, </span><span class="s0">instance }) =&gt; {</span>
-<a name="l13"><span class="ln">13   </span></a>          <span class="s0">instance.setCookie(</span><span class="s1">'only-mobile'</span><span class="s2">, </span><span class="s3">1</span><span class="s2">, </span><span class="s3">14</span><span class="s0">)</span><span class="s2">;</span>
-<a name="l14"><span class="ln">14   </span></a>          <span class="s0">instance.hide()</span><span class="s2">;</span>
-<a name="l15"><span class="ln">15   </span></a>        <span class="s0">}</span>
-<a name="l16"><span class="ln">16   </span></a>      <span class="s0">}</span>
-<a name="l17"><span class="ln">17   </span></a>    <span class="s0">}</span><span class="s2">,</span>
-<a name="l18"><span class="ln">18   </span></a>    <span class="s0">agree: {</span>
-<a name="l19"><span class="ln">19   </span></a>      <span class="s0">type: </span><span class="s1">'a'</span><span class="s2">,</span>
-<a name="l20"><span class="ln">20   </span></a>      <span class="s0">text: </span><span class="s1">'Go to site'</span><span class="s2">,</span>
-<a name="l21"><span class="ln">21   </span></a>      <span class="s0">attributes: {</span>
-<a name="l22"><span class="ln">22   </span></a>        <span class="s2">class</span><span class="s0">: </span><span class="s1">'btn-primary'</span><span class="s2">,</span>
-<a name="l23"><span class="ln">23   </span></a>        <span class="s0">href: </span><span class="s1">'https://google.com'</span><span class="s2">,</span>
-<a name="l24"><span class="ln">24   </span></a>        <span class="s0">target: </span><span class="s1">'_blank'</span>
-<a name="l25"><span class="ln">25   </span></a>      <span class="s0">}</span><span class="s2">,</span>
-<a name="l26"><span class="ln">26   </span></a>      <span class="s0">actions: {</span>
-<a name="l27"><span class="ln">27   </span></a>        <span class="s0">click: ({ button</span><span class="s2">, </span><span class="s0">event</span><span class="s2">, </span><span class="s0">instance }) =&gt; {</span>
-<a name="l28"><span class="ln">28   </span></a>          <span class="s0">instance.hide()</span><span class="s2">;</span>
-<a name="l29"><span class="ln">29   </span></a>        <span class="s0">}</span>
-<a name="l30"><span class="ln">30   </span></a>      <span class="s0">}</span>
-<a name="l31"><span class="ln">31   </span></a>    <span class="s0">}</span>
-<a name="l32"><span class="ln">32   </span></a>  <span class="s0">}</span><span class="s2">,</span>
-<a name="l33"><span class="ln">33   </span></a>  <span class="s0">appear: (instance) =&gt; {</span>
-<a name="l34"><span class="ln">34   </span></a>    <span class="s2">const </span><span class="s0">ua = </span><span class="s2">new </span><span class="s0">MobileDetect(window.navigator.userAgent)</span><span class="s2">, </span><span class="s0">isAndroid = ua.is(</span><span class="s1">'Android'</span><span class="s0">)</span><span class="s2">,</span>
-<a name="l35"><span class="ln">35   </span></a>          <span class="s0">link = document.querySelector(</span><span class="s1">'#show-only-android'</span><span class="s0">)</span><span class="s2">;</span>
-<a name="l36"><span class="ln">36   </span></a>
-<a name="l37"><span class="ln">37   </span></a>    <span class="s4">/*Set position inline*/</span>
-<a name="l38"><span class="ln">38   </span></a>    <span class="s0">instance.css(instance.popup</span><span class="s2">, </span><span class="s0">{</span>
-<a name="l39"><span class="ln">39   </span></a>      <span class="s0">position: </span><span class="s1">'absolute'</span><span class="s2">,</span>
-<a name="l40"><span class="ln">40   </span></a>      <span class="s0">right: </span><span class="s3">0</span><span class="s2">,</span>
-<a name="l41"><span class="ln">41   </span></a>      <span class="s0">bottom: </span><span class="s3">0</span><span class="s2">,</span>
-<a name="l42"><span class="ln">42   </span></a>      <span class="s0">left: </span><span class="s3">0</span>
-<a name="l43"><span class="ln">43   </span></a>    <span class="s0">})</span><span class="s2">;</span>
-<a name="l44"><span class="ln">44   </span></a>
-<a name="l45"><span class="ln">45   </span></a>    <span class="s0">link.style.display = (!isAndroid ? </span><span class="s1">'' </span><span class="s0">: </span><span class="s1">'none'</span><span class="s0">)</span><span class="s2">;</span>
-<a name="l46"><span class="ln">46   </span></a>    <span class="s0">link.addEventListener(</span><span class="s1">'click'</span><span class="s2">, </span><span class="s0">(e) =&gt; {</span>
-<a name="l47"><span class="ln">47   </span></a>      <span class="s0">e.preventDefault()</span><span class="s2">;</span>
-<a name="l48"><span class="ln">48   </span></a>      <span class="s0">instance.show()</span><span class="s2">;</span>
-<a name="l49"><span class="ln">49   </span></a>    <span class="s0">})</span><span class="s2">;</span>
-<a name="l50"><span class="ln">50   </span></a>
-<a name="l51"><span class="ln">51   </span></a>    <span class="s2">return </span><span class="s0">isAndroid &amp;&amp; !instance.getCookie(</span><span class="s1">'only-mobile'</span><span class="s0">)</span><span class="s2">;</span>
-<a name="l52"><span class="ln">52   </span></a>  <span class="s0">}</span>
-<a name="l53"><span class="ln">53   </span></a><span class="s0">}</span></pre>
-            </div>
+            <div id="oa-main" class="tab-content"></div>
+            <div id="oa-opts" class="tab-content"></div>
           </div>
         </div>
       </article>
@@ -115,65 +41,12 @@
       </div>
       <article>
         <p>Generic example</p>
-        <div class="tabset">
+        <div class="tab-set">
           <ul>
-            <li><a href="#ge-main">main.js</a></li>
+            <li><a href="tpl/ge-main.js.tpl" rel="ge-main">main.js</a></li>
           </ul>
           <div class="tabs">
-            <div id="ge-main" class="tab">
-<style type="text/css">
- #ge-main .s0 { color: #e8bf6a;}
- #ge-main .s1 { color: #bababa;}
- #ge-main .s2 { color: #a5c261;}
- #ge-main .s3 { color: #a9b7c6;}
- #ge-main .s4 { color: #cc7832;}
- #ge-main .s5 { color: #6a8759;}
- #ge-main .s6 { color: #808080;}
- #ge-main .s7 { color: #6897bb;}
-</style>
-<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">&lt;script </span><span class="s1">type</span><span class="s2">=&quot;text/javascript&quot;</span><span class="s0">&gt;</span>
-<a name="l2"><span class="ln">2    </span></a>  <span class="s3">generic = </span><span class="s4">new </span><span class="s3">ShadowPopup({</span>
-<a name="l3"><span class="ln">3    </span></a>    <span class="s3">holder: document.querySelector(</span><span class="s5">'#generic'</span><span class="s3">)</span><span class="s4">,</span>
-<a name="l4"><span class="ln">4    </span></a>    <span class="s3">title: </span><span class="s5">'&lt;h1&gt;Google is a search&lt;/h1&gt;'</span><span class="s4">,</span>
-<a name="l5"><span class="ln">5    </span></a>    <span class="s3">content: </span><span class="s5">'&lt;p&gt;Use it anywhere&lt;/p&gt;'</span><span class="s4">,</span>
-<a name="l6"><span class="ln">6    </span></a>    <span class="s3">buttons: {</span>
-<a name="l7"><span class="ln">7    </span></a>      <span class="s3">disagree: {</span>
-<a name="l8"><span class="ln">8    </span></a>        <span class="s3">text: </span><span class="s5">'Not now'</span><span class="s4">,</span>
-<a name="l9"><span class="ln">9    </span></a>        <span class="s3">attributes: {</span>
-<a name="l10"><span class="ln">10   </span></a>          <span class="s4">class</span><span class="s3">: </span><span class="s5">'btn-secondary'</span>
-<a name="l11"><span class="ln">11   </span></a>        <span class="s3">}</span><span class="s4">,</span>
-<a name="l12"><span class="ln">12   </span></a>        <span class="s3">actions: {</span>
-<a name="l13"><span class="ln">13   </span></a>          <span class="s3">click: ({ button</span><span class="s4">, </span><span class="s3">event</span><span class="s4">, </span><span class="s3">instance }) =&gt; {</span>
-<a name="l14"><span class="ln">14   </span></a>            <span class="s3">instance.hide()</span><span class="s4">;</span>
-<a name="l15"><span class="ln">15   </span></a>          <span class="s3">}</span>
-<a name="l16"><span class="ln">16   </span></a>        <span class="s3">}</span>
-<a name="l17"><span class="ln">17   </span></a>      <span class="s3">}</span><span class="s4">,</span>
-<a name="l18"><span class="ln">18   </span></a>      <span class="s3">agree: {</span>
-<a name="l19"><span class="ln">19   </span></a>        <span class="s3">text: </span><span class="s5">'Do something'</span><span class="s4">,</span>
-<a name="l20"><span class="ln">20   </span></a>        <span class="s3">attributes: {</span>
-<a name="l21"><span class="ln">21   </span></a>          <span class="s4">class</span><span class="s3">: </span><span class="s5">'btn-primary'</span>
-<a name="l22"><span class="ln">22   </span></a>        <span class="s3">}</span><span class="s4">,</span>
-<a name="l23"><span class="ln">23   </span></a>        <span class="s3">actions: {</span>
-<a name="l24"><span class="ln">24   </span></a>          <span class="s3">click: ({ button</span><span class="s4">, </span><span class="s3">event</span><span class="s4">, </span><span class="s3">instance }) =&gt; {</span>
-<a name="l25"><span class="ln">25   </span></a>            <span class="s3">alert(</span><span class="s5">'Cool!'</span><span class="s3">)</span><span class="s4">;</span>
-<a name="l26"><span class="ln">26   </span></a>          <span class="s3">}</span>
-<a name="l27"><span class="ln">27   </span></a>        <span class="s3">}</span>
-<a name="l28"><span class="ln">28   </span></a>      <span class="s3">}</span>
-<a name="l29"><span class="ln">29   </span></a>    <span class="s3">}</span><span class="s4">,</span>
-<a name="l30"><span class="ln">30   </span></a>    <span class="s3">appear: (instance) =&gt; {</span>
-<a name="l31"><span class="ln">31   </span></a>      <span class="s6">/*Set position inline*/</span>
-<a name="l32"><span class="ln">32   </span></a>      <span class="s3">instance.css(instance.popup</span><span class="s4">, </span><span class="s3">{</span>
-<a name="l33"><span class="ln">33   </span></a>        <span class="s3">position: </span><span class="s5">'absolute'</span><span class="s4">,</span>
-<a name="l34"><span class="ln">34   </span></a>        <span class="s3">right: </span><span class="s7">0</span><span class="s4">,</span>
-<a name="l35"><span class="ln">35   </span></a>        <span class="s3">bottom: </span><span class="s7">0</span><span class="s4">,</span>
-<a name="l36"><span class="ln">36   </span></a>        <span class="s3">left: </span><span class="s7">0</span>
-<a name="l37"><span class="ln">37   </span></a>      <span class="s3">})</span><span class="s4">;</span>
-<a name="l38"><span class="ln">38   </span></a>
-<a name="l39"><span class="ln">39   </span></a>      <span class="s4">return true</span>
-<a name="l40"><span class="ln">40   </span></a>    <span class="s3">}</span>
-<a name="l41"><span class="ln">41   </span></a>  <span class="s3">})</span><span class="s4">;</span>
-<a name="l42"><span class="ln">42   </span></a><span class="s0">&lt;/script&gt;</span></pre>
-            </div>
+            <div id="ge-main" class="tab-content"></div>
           </div>
         </div>
       </article>
@@ -186,93 +59,32 @@
       </div>
       <article>
         <p>Custom template</p>
-        <div class="tabset">
+        <div class="tab-set">
           <ul>
-            <li><a href="#tp-main">main.js</a></li>
-            <li><a href="#tp-tpl">template.tpl</a></li>
+            <li><a href="tpl/tp-main.js.tpl" rel="tp-main">main.js</a></li>
+            <li><a href="tpl/tp-template.tpl" rel="tp-tpl">template.tpl</a></li>
           </ul>
           <div class="tabs">
-            <div id="tp-main" class="tab">
-<style type="text/css">
- #tp-main .s0 { color: #e8bf6a;}
- #tp-main .s1 { color: #bababa;}
- #tp-main .s2 { color: #a5c261;}
- #tp-main .s3 { color: #a9b7c6;}
- #tp-main .s4 { color: #cc7832;}
- #tp-main .s5 { color: #6a8759;}
- #tp-main .s6 { color: #808080;}
- #tp-main .s7 { color: #6897bb;}
-</style>
-              <pre><a name="l1"><span class="ln">1    </span></a><span class="s0">&lt;script </span><span class="s1">type</span><span class="s2">=&quot;text/javascript&quot;</span><span class="s0">&gt;</span>
-<a name="l2"><span class="ln">2    </span></a>  <span class="s3">template = </span><span class="s4">new </span><span class="s3">ShadowPopup({</span>
-<a name="l3"><span class="ln">3    </span></a>    <span class="s3">holder: document.querySelector(</span><span class="s5">'#template'</span><span class="s3">)</span><span class="s4">,</span>
-<a name="l4"><span class="ln">4    </span></a>    <span class="s3">template: { url: </span><span class="s5">'./template.tpl' </span><span class="s3">}</span><span class="s4">,</span>
-<a name="l5"><span class="ln">5    </span></a>    <span class="s3">title: </span><span class="s5">'&lt;h1&gt;Google is a search&lt;/h1&gt;'</span><span class="s4">,</span>
-<a name="l6"><span class="ln">6    </span></a>    <span class="s3">content: </span><span class="s5">'&lt;p&gt;Use it anywhere&lt;/p&gt;'</span><span class="s4">,</span>
-<a name="l7"><span class="ln">7    </span></a>    <span class="s3">buttons: {</span>
-<a name="l8"><span class="ln">8    </span></a>      <span class="s3">disagree: {</span>
-<a name="l9"><span class="ln">9    </span></a>        <span class="s3">text: </span><span class="s5">'Not now'</span><span class="s4">,</span>
-<a name="l10"><span class="ln">10   </span></a>        <span class="s3">attributes: {</span>
-<a name="l11"><span class="ln">11   </span></a>          <span class="s4">class</span><span class="s3">: </span><span class="s5">'btn-secondary'</span>
-<a name="l12"><span class="ln">12   </span></a>        <span class="s3">}</span><span class="s4">,</span>
-<a name="l13"><span class="ln">13   </span></a>        <span class="s3">actions: {</span>
-<a name="l14"><span class="ln">14   </span></a>          <span class="s3">click: ({ button</span><span class="s4">, </span><span class="s3">event</span><span class="s4">, </span><span class="s3">instance }) =&gt; {</span>
-<a name="l15"><span class="ln">15   </span></a>            <span class="s3">instance.hide()</span><span class="s4">;</span>
-<a name="l16"><span class="ln">16   </span></a>          <span class="s3">}</span>
-<a name="l17"><span class="ln">17   </span></a>        <span class="s3">}</span>
-<a name="l18"><span class="ln">18   </span></a>      <span class="s3">}</span><span class="s4">,</span>
-<a name="l19"><span class="ln">19   </span></a>      <span class="s3">agree: {</span>
-<a name="l20"><span class="ln">20   </span></a>        <span class="s3">text: </span><span class="s5">'Do something'</span><span class="s4">,</span>
-<a name="l21"><span class="ln">21   </span></a>        <span class="s3">attributes: {</span>
-<a name="l22"><span class="ln">22   </span></a>          <span class="s4">class</span><span class="s3">: </span><span class="s5">'btn-primary'</span>
-<a name="l23"><span class="ln">23   </span></a>        <span class="s3">}</span><span class="s4">,</span>
-<a name="l24"><span class="ln">24   </span></a>        <span class="s3">actions: {</span>
-<a name="l25"><span class="ln">25   </span></a>          <span class="s3">click: ({ button</span><span class="s4">, </span><span class="s3">event</span><span class="s4">, </span><span class="s3">instance }) =&gt; {</span>
-<a name="l26"><span class="ln">26   </span></a>            <span class="s3">alert(</span><span class="s5">'Cool!'</span><span class="s3">)</span><span class="s4">;</span>
-<a name="l27"><span class="ln">27   </span></a>          <span class="s3">}</span>
-<a name="l28"><span class="ln">28   </span></a>        <span class="s3">}</span>
-<a name="l29"><span class="ln">29   </span></a>      <span class="s3">}</span>
-<a name="l30"><span class="ln">30   </span></a>    <span class="s3">}</span><span class="s4">,</span>
-<a name="l31"><span class="ln">31   </span></a>    <span class="s3">appear: (instance) =&gt; {</span>
-<a name="l32"><span class="ln">32   </span></a>      <span class="s6">/*Set position inline*/</span>
-<a name="l33"><span class="ln">33   </span></a>      <span class="s3">instance.css(instance.popup</span><span class="s4">, </span><span class="s3">{</span>
-<a name="l34"><span class="ln">34   </span></a>        <span class="s3">position: </span><span class="s5">'absolute'</span><span class="s4">,</span>
-<a name="l35"><span class="ln">35   </span></a>        <span class="s3">right: </span><span class="s7">0</span><span class="s4">,</span>
-<a name="l36"><span class="ln">36   </span></a>        <span class="s3">bottom: </span><span class="s7">0</span><span class="s4">,</span>
-<a name="l37"><span class="ln">37   </span></a>        <span class="s3">left: </span><span class="s7">0</span>
-<a name="l38"><span class="ln">38   </span></a>      <span class="s3">})</span><span class="s4">;</span>
-<a name="l39"><span class="ln">39   </span></a>
-<a name="l40"><span class="ln">40   </span></a>      <span class="s4">return true</span>
-<a name="l41"><span class="ln">41   </span></a>    <span class="s3">}</span>
-<a name="l42"><span class="ln">42   </span></a>  <span class="s3">})</span><span class="s4">;</span>
-<a name="l43"><span class="ln">43   </span></a><span class="s0">&lt;/script&gt;</span></pre>
-            </div>
-            <div id="tp-tpl" class="tab">
-<style type="text/css">
- #tp-tpl .s0 { color: #e8bf6a;}
- #tp-tpl .s1 { color: #bababa;}
- #tp-tpl .s2 { color: #a5c261;}
- #tp-tpl .s3 { color: #a9b7c6;}
- #tp-tpl .s4 { color: #6897bb;}
- #tp-tpl .s5 { color: #cc7832;}
-</style>
-<pre><a name="l1"><span class="ln">1    </span></a><span class="s0">&lt;div </span><span class="s1">class</span><span class="s2">=&quot;popup custom-structure&quot;</span><span class="s0">&gt;</span>
-<a name="l2"><span class="ln">2    </span></a>  <span class="s0">&lt;style </span><span class="s1">type</span><span class="s2">=&quot;text/css&quot;</span><span class="s0">&gt;</span>
-<a name="l3"><span class="ln">3    </span></a>    <span class="s3">.</span><span class="s0">custom-structure </span><span class="s3">{</span>
-<a name="l4"><span class="ln">4    </span></a>      <span class="s1">background</span><span class="s3">: </span><span class="s4">#bebebe</span><span class="s5">;</span>
-<a name="l5"><span class="ln">5    </span></a>    <span class="s3">}</span>
-<a name="l6"><span class="ln">6    </span></a>  <span class="s0">&lt;/style&gt;</span>
-<a name="l7"><span class="ln">7    </span></a>  <span class="s0">&lt;div </span><span class="s1">class</span><span class="s2">=&quot;header custom-title&quot;</span><span class="s0">&gt;</span>
-<a name="l8"><span class="ln">8    </span></a>    <span class="s3">{%heading%}</span>
-<a name="l9"><span class="ln">9    </span></a>  <span class="s0">&lt;/div&gt;</span>
-<a name="l10"><span class="ln">10   </span></a>  <span class="s0">&lt;div </span><span class="s1">class</span><span class="s2">=&quot;container custom-content&quot;</span><span class="s0">&gt;</span>
-<a name="l11"><span class="ln">11   </span></a>    <span class="s3">{%content%}</span>
-<a name="l12"><span class="ln">12   </span></a>  <span class="s0">&lt;/div&gt;</span>
-<a name="l13"><span class="ln">13   </span></a>  <span class="s0">&lt;div </span><span class="s1">class</span><span class="s2">=&quot;buttons custom-buttons&quot;</span><span class="s0">&gt;</span>
-<a name="l14"><span class="ln">14   </span></a>    <span class="s3">{%buttons%}</span>
-<a name="l15"><span class="ln">15   </span></a>  <span class="s0">&lt;/div&gt;</span>
-<a name="l16"><span class="ln">16   </span></a><span class="s0">&lt;/div&gt;</span></pre>
-            </div>
+            <div id="tp-main" class="tab-content"></div>
+            <div id="tp-tpl" class="tab-content"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!--Change values-->
+    <section>
+      <div class="display">
+        <div id="change" class="example"></div>
+      </div>
+      <article>
+        <p>Real-time change values</p>
+        <div class="tab-set">
+          <ul>
+            <li><a href="tpl/ch-main.js.tpl" rel="tp-main">main.js</a></li>
+          </ul>
+          <div class="tabs">
+            <div id="ch-main" class="tab-content"></div>
           </div>
         </div>
       </article>
@@ -284,9 +96,12 @@
     android = new ShadowPopup({ url: './js/only-android.js' });
 
     generic = new ShadowPopup({
-      holder: document.querySelector('#generic'),
+      shadowParent: document.querySelector('#generic'),
+      stylesheets: [
+        './css/popup.css',
+        '.popup { position: fixed; right: 0; bottom: 0; left: 0; z-index: 1001; }'
+      ],
       title: '<h1>Google is a search</h1>',
-      content: '<p>Use it anywhere</p>',
       buttons: {
         disagree: {
           text: 'Not now',
@@ -306,29 +121,23 @@
           },
           actions: {
             click: ({ button, event, instance }) => {
-              alert('Cool!');
+              alert('Something!');
             }
           }
         }
       },
-      appear: (instance) => {
-        /*Set position inline*/
-        instance.css(instance.popup, {
-          position: 'absolute',
-          right: 0,
-          bottom: 0,
-          left: 0
-        });
-
-        return true
-      }
+      appear: () => true
     });
 
     template = new ShadowPopup({
-      holder: document.querySelector('#template'),
-      template: { url: './template.tpl' },
-      title: '<h1>Google is a search</h1>',
-      content: '<p>Use it anywhere</p>',
+      shadowParent: document.querySelector('#template'),
+      stylesheets: [
+        './css/popup.css',
+        '.popup { position: fixed; right: 0; bottom: 0; left: 0; z-index: 1001; }'
+      ],
+      template: { url: './tpl/custom-popup.tpl' },
+      title: '<h1>Popup with custom template</h1>',
+      content: '<p>You can customize it all</p>',
       buttons: {
         disagree: {
           text: 'Not now',
@@ -348,21 +157,63 @@
           },
           actions: {
             click: ({ button, event, instance }) => {
-              alert('Cool!');
+              alert('I do!');
             }
           }
         }
       },
-      appear: (instance) => {
-        /*Set position inline*/
-        instance.css(instance.popup, {
-          position: 'absolute',
-          right: 0,
-          bottom: 0,
-          left: 0
-        });
+      appear: () => true
+    });
 
-        return true
+    change = new ShadowPopup({
+      shadowParent: document.querySelector('#change'),
+      stylesheets: [
+        './css/popup.css',
+        '.popup { position: fixed; right: 0; bottom: 0; left: 0; z-index: 1001; }'
+      ],
+      title: '<h1 id="title">This title will be changed</h1>',
+      content: '<p id="content">This descriptions will be changed</p>',
+      buttons: {
+        disagree: {
+          text: 'It will be changed too',
+          attributes: {
+            class: 'btn-secondary'
+          },
+          actions: {
+            click: ({ button, event, instance }) => {
+              instance.hide();
+            }
+          }
+        },
+        agree: {
+          text: 'Change it!',
+          attributes: {
+            class: 'btn-primary'
+          },
+          actions: {
+            click: ({ button, event, instance }) => {
+              instance.options.changeIt(instance);
+            }
+          }
+        }
+      },
+      changeIt: (instance) => {
+        /*Generate random text*/
+        const random = (length = 8) => {
+                return Math.random().toString(16).substr(2, length);
+              },
+              strings = {
+                title: random(32),
+                content: random(64),
+                disagree: random(16)
+              }
+
+        instance.popup.querySelectorAll('*[id]').forEach(el => {
+          el.textContent = strings[el.id] || el.textContent;
+        });
+      },
+      appear: (instance) => {
+        return true;
       }
     });
   </script>
