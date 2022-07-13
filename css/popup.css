@@ -19,15 +19,15 @@
 
 .popup.visible {
   opacity: 1;
+  display: block !important;
 }
 
 .popup.hidden {
   opacity: 0;
-  display: none;
 }
 
 .popup.transition {
-  display: block;
+  display: block !important;
 }
 
 .popup .holder {

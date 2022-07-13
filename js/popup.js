@@ -326,6 +326,7 @@ class ShadowPopup {
       this.holder = this.options.shadowParent.attachShadow({ mode: this.options.shadowMode });
       this.holder.append(this.stylesheets, this.popup);
       this.popup.classList.add('loading');
+      this.popup.style.display = 'none';
   
       /*Temporary disable animation*/
       setTimeout(() => {
