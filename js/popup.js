@@ -325,10 +325,11 @@ class ShadowPopup {
     if (!this.holder) {
       this.holder = this.options.shadowParent.attachShadow({ mode: this.options.shadowMode });
       this.holder.append(this.stylesheets, this.popup);
+      this.popup.classList.add('loading');
   
       /*Temporary disable animation*/
       setTimeout(() => {
-        this.transition('loading', null, () => {
+        this.transition(null, null, () => {
           this.popup.classList.remove('loading');
         });
       }, 10);
