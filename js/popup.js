@@ -137,13 +137,6 @@ class ShadowPopup {
     /*Show popup*/
     if ( this.isFunction(this.options.appear) && this.options.appear(this) ) {
       this.show();
-
-      /*Temporary disable animation*/
-      setTimeout(() => {
-        this.transition('loading', null, () => {
-          this.popup.classList.remove('loading');
-        });
-      }, 10);
     }
   }
 
@@ -332,6 +325,13 @@ class ShadowPopup {
     if (!this.holder) {
       this.holder = this.options.shadowParent.attachShadow({ mode: this.options.shadowMode });
       this.holder.append(this.stylesheets, this.popup);
+  
+      /*Temporary disable animation*/
+      setTimeout(() => {
+        this.transition('loading', null, () => {
+          this.popup.classList.remove('loading');
+        });
+      }, 10);
     }
     
     if (!this.options.shadowParent.parentNode) {
