@@ -199,13 +199,15 @@
       },
       changeIt: (instance) => {
         /*Generate random text*/
-        const random = (length = 8) => {
-                return Math.random().toString(16).substr(2, length);
+        const generateRandomString = function (length, randomString = '') {
+                randomString += Math.random().toString(20).substr(2, length);
+                if (randomString.length > length) return randomString.slice(0, length);
+                return generateRandomString(length, randomString);
               },
               strings = {
-                title: random(32),
-                content: random(64),
-                disagree: random(16)
+                title: generateRandomString(24),
+                content: generateRandomString(36),
+                disagree: generateRandomString(12)
               }
 
         instance.popup.querySelectorAll('*[id]').forEach(el => {

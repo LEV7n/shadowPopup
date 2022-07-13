@@ -91,5 +91,5 @@
 }
 
 .popup.loading * {
-  transition: none !important;
+  transition: unset !important;
 }

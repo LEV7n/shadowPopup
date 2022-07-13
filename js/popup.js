@@ -327,9 +327,11 @@ class ShadowPopup {
       this.holder.append(this.stylesheets, this.popup);
   
       /*Temporary disable animation*/
-      this.transition('loading', null, () => {
-        this.popup.classList.remove('loading');
-      });
+      setTimeout(() => {
+        this.transition('loading', null, () => {
+          this.popup.classList.remove('loading');
+        });
+      }, 10);
     }
     
     if (!this.options.shadowParent.parentNode) {
